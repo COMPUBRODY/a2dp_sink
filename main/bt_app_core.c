@@ -18,6 +18,7 @@
 #include "bt_app_core.h"
 #include "driver/i2s.h"
 #include "freertos/ringbuf.h"
+#include "FIR_Filter.h"
 
 static void bt_app_task_handler(void *arg);
 static bool bt_app_send_msg(bt_app_msg_t *msg);
@@ -121,9 +122,15 @@ static void bt_i2s_task_handler(void *arg)
     uint8_t *data = NULL;
     size_t item_size = 0;
     size_t bytes_written = 0;
+    
+
+    FIRFilter filter_data;
+
+    FIRFilter_Init(&filter_data);
 
     for (;;) {
         data = (uint8_t *)xRingbufferReceive(s_ringbuf_i2s, &item_size, (portTickType)portMAX_DELAY);
+        FIRFilter_Update(&filter_data, data);
         if (item_size != 0){
             i2s_write(0, data, item_size, &bytes_written, portMAX_DELAY);
             vRingbufferReturnItem(s_ringbuf_i2s,(void *)data);
