@@ -70,6 +70,12 @@ void bt_app_a2d_cb(esp_a2d_cb_event_t event, esp_a2d_cb_param_t *param)
 
 void bt_app_a2d_data_cb(const uint8_t *data, uint32_t len)
 {
+    /*uint16_t *dt = (uint16_t*)data;
+    uint32_t count = len/2;
+    while(count-- >0){
+        *dt += 0x8000U;
+        dt++;
+    }*/
     write_ringbuf(data, len);
     if (++s_pkt_cnt % 100 == 0) {
         ESP_LOGI(BT_AV_TAG, "Audio packet count %u", s_pkt_cnt);
@@ -320,7 +326,7 @@ static void volume_change_simulation(void *arg)
         vTaskDelay(10000 / portTICK_RATE_MS);
 
         uint8_t volume = (s_volume + 5) & 0x7f;
-        volume_set_by_local_host(volume);
+        //volume_set_by_local_host(volume);
     }
 }
 

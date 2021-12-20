@@ -27,7 +27,7 @@ static void bt_app_work_dispatched(bt_app_msg_t *msg);
 static xQueueHandle s_bt_app_task_queue = NULL;
 static xTaskHandle s_bt_app_task_handle = NULL;
 static xTaskHandle s_bt_i2s_task_handle = NULL;
-static RingbufHandle_t s_ringbuf_i2s = NULL;;
+static RingbufHandle_t s_ringbuf_i2s = NULL;
 
 bool bt_app_work_dispatch(bt_app_cb_t p_cback, uint16_t event, void *p_params, int param_len, bt_app_copy_cb_t p_copy_cback)
 {
@@ -101,6 +101,7 @@ static void bt_app_task_handler(void *arg)
 void bt_app_task_start_up(void)
 {
     s_bt_app_task_queue = xQueueCreate(10, sizeof(bt_app_msg_t));
+    /* 3072*/
     xTaskCreate(bt_app_task_handler, "BtAppT", 3072, NULL, configMAX_PRIORITIES - 3, &s_bt_app_task_handle);
     return;
 }
@@ -117,35 +118,38 @@ void bt_app_task_shut_down(void)
     }
 }
 
-static void bt_i2s_task_handler(void *arg)
+/*
+FUNCION DONDE SE APLICA EL FILTRO
+*/
+void bt_i2s_task_handler(void *arg)
 {
     uint8_t *data = NULL;
     size_t item_size = 0;
     size_t bytes_written = 0;
-    
 
     FIRFilter filter_data;
-
     FIRFilter_Init(&filter_data);
-
     for (;;) {
         data = (uint8_t *)xRingbufferReceive(s_ringbuf_i2s, &item_size, (portTickType)portMAX_DELAY);
-        FIRFilter_Update(&filter_data, data);
+
         if (item_size != 0){
+
+            data = (uint8_t*) FIR_filter(&filter_data, data, item_size);
             i2s_write(0, data, item_size, &bytes_written, portMAX_DELAY);
             vRingbufferReturnItem(s_ringbuf_i2s,(void *)data);
+
         }
     }
 }
-
-void bt_i2s_task_start_up(void)
+/* aqui se crea la tarea del i2s bluetooht*/
+void bt_i2s_task_start_up(void) 
 {
     s_ringbuf_i2s = xRingbufferCreate(8 * 1024, RINGBUF_TYPE_BYTEBUF);
     if(s_ringbuf_i2s == NULL){
         return;
     }
 
-    xTaskCreate(bt_i2s_task_handler, "BtI2ST", 1024, NULL, configMAX_PRIORITIES - 3, &s_bt_i2s_task_handle);
+    xTaskCreate(bt_i2s_task_handler, "BtI2ST", 16384, NULL, configMAX_PRIORITIES - 3, &s_bt_i2s_task_handle);
     return;
 }
 

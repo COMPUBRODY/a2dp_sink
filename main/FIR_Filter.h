@@ -2,9 +2,7 @@
 #define FIR_FILTER_H
 
 
-#include <stdint.h>
-
-#define FIR_FILTER_LENGTH 101 
+#define FIR_FILTER_LENGTH 24
 
 typedef struct 
 {
@@ -13,8 +11,10 @@ typedef struct
     float out;                      //salida del buffer
 }FIRFilter;
 
-
+float * uint8_to_float(uint8_t* data, size_t size);
+uint8_t *float_to_uint8(float* signal, size_t size);
 void FIRFilter_Init(FIRFilter *fir);
-float FIRFilter_Update(FIRFilter *fir, uint8_t *input_sample);  
+float * convolution(FIRFilter *fir, float *signal_in, size_t size );
+uint8_t * FIR_filter(FIRFilter *fir, uint8_t* data, size_t size);
 
 #endif

@@ -62,8 +62,8 @@ void app_main(void)
         .bits_per_sample = 16,
         .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,                           //2-channels
         .communication_format = I2S_COMM_FORMAT_STAND_MSB,
-        .dma_buf_count = 6,
-        .dma_buf_len = 60,
+        .dma_buf_count = 8,
+        .dma_buf_len = 512,
         .intr_alloc_flags = 0,                                                  //Default interrupt priority
         .tx_desc_auto_clear = true                                              //Auto clear tx descriptor on underflow
     };
@@ -172,6 +172,7 @@ void bt_app_gap_cb(esp_bt_gap_cb_event_t event, esp_bt_gap_cb_param_t *param)
     }
     return;
 }
+
 static void bt_av_hdl_stack_evt(uint16_t event, void *p_param)
 {
     ESP_LOGD(BT_AV_TAG, "%s evt %d", __func__, event);
