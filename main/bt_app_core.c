@@ -127,17 +127,18 @@ void bt_i2s_task_handler(void *arg)
     size_t item_size = 0;
     size_t bytes_written = 0;
 
-    FIRFilter filter_data;
-    FIRFilter_Init(&filter_data);
+    
+    FIRFilter_Init();
+
     for (;;) {
         data = (uint8_t *)xRingbufferReceive(s_ringbuf_i2s, &item_size, (portTickType)portMAX_DELAY);
 
         if (item_size != 0){
-
-            data = (uint8_t*) FIR_filter(&filter_data, data, item_size);
+            
+            data = FIR_filter(data, item_size);
             i2s_write(0, data, item_size, &bytes_written, portMAX_DELAY);
             vRingbufferReturnItem(s_ringbuf_i2s,(void *)data);
-
+            
         }
     }
 }

@@ -70,17 +70,38 @@ void bt_app_a2d_cb(esp_a2d_cb_event_t event, esp_a2d_cb_param_t *param)
 
 void bt_app_a2d_data_cb(const uint8_t *data, uint32_t len)
 {
-    /*uint16_t *dt = (uint16_t*)data;
+    /*
+    size_t bytes_written;
+    uint16_t *dt = (uint16_t*)data;
     uint32_t count = len/2;
     while(count-- >0){
         *dt += 0x8000U;
         dt++;
+    }
+    
+    i2s_write(0, data, len, &bytes_written, portMAX_DELAY);
+    if (++s_pkt_cnt % 100 == 0) {
+        ESP_LOGI(BT_AV_TAG, "Audio packet count %u", s_pkt_cnt);
     }*/
+    
     write_ringbuf(data, len);
     if (++s_pkt_cnt % 100 == 0) {
         ESP_LOGI(BT_AV_TAG, "Audio packet count %u", s_pkt_cnt);
     }
 }
+/*
+uint16_t buffer[2048];
+void bt_app_a2d_data_cb(const uint8_t *data, uint32_t len)
+{
+    size_t bytes_written;
+    for(int i = 0; i < 2048; i++){
+        buffer[i] = ((int16_t*)data)[i] + 0x8000;
+    }
+    i2s_write(0, (const uint8_t*)buffer, len, &bytes_written, portMAX_DELAY);
+    if (++s_pkt_cnt % 100 == 0) {
+        ESP_LOGI(BT_AV_TAG, "Audio packet count %u", s_pkt_cnt);
+    }
+}*/
 
 void bt_app_alloc_meta_buffer(esp_avrc_ct_cb_param_t *param)
 {

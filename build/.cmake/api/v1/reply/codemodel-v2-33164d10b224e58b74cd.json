@@ -1593,7 +1593,7 @@
 				{
 					"directoryIndex" : 9,
 					"id" : "__idf_app_update::@cc3b426666063acc9674",
-					"jsonFile" : "target-__idf_app_update-Debug-341aab787d6068827c7e.json",
+					"jsonFile" : "target-__idf_app_update-Debug-b0b13b582630fb9009df.json",
 					"name" : "__idf_app_update",
 					"projectIndex" : 1
 				},
@@ -1628,7 +1628,7 @@
 				{
 					"directoryIndex" : 53,
 					"id" : "__idf_cmock::@38f9eb59693b7394f54c",
-					"jsonFile" : "target-__idf_cmock-Debug-44b3f8b911b9a5d9dee8.json",
+					"jsonFile" : "target-__idf_cmock-Debug-44d48a5cdf52915a03fa.json",
 					"name" : "__idf_cmock",
 					"projectIndex" : 1
 				},
@@ -1719,7 +1719,7 @@
 				{
 					"directoryIndex" : 59,
 					"id" : "__idf_esp_hid::@15df40e16a5d8775dd9b",
-					"jsonFile" : "target-__idf_esp_hid-Debug-dae93873f3e0ef83a7b5.json",
+					"jsonFile" : "target-__idf_esp_hid-Debug-399a36bc036c77af9d56.json",
 					"name" : "__idf_esp_hid",
 					"projectIndex" : 1
 				},
@@ -1761,7 +1761,7 @@
 				{
 					"directoryIndex" : 68,
 					"id" : "__idf_esp_local_ctrl::@d6aad58d2946e56208ef",
-					"jsonFile" : "target-__idf_esp_local_ctrl-Debug-2c1f2c04709b7626a45b.json",
+					"jsonFile" : "target-__idf_esp_local_ctrl-Debug-8f0d2dc63b7506d74584.json",
 					"name" : "__idf_esp_local_ctrl",
 					"projectIndex" : 1
 				},
@@ -1845,7 +1845,7 @@
 				{
 					"directoryIndex" : 75,
 					"id" : "__idf_fatfs::@75ac1d9b25dacc8cc9e7",
-					"jsonFile" : "target-__idf_fatfs-Debug-c6df1d9bce814297c021.json",
+					"jsonFile" : "target-__idf_fatfs-Debug-672628919d4f7be91a3d.json",
 					"name" : "__idf_fatfs",
 					"projectIndex" : 1
 				},
@@ -1915,7 +1915,7 @@
 				{
 					"directoryIndex" : 87,
 					"id" : "__idf_main::@7368607ed66887415643",
-					"jsonFile" : "target-__idf_main-Debug-ad8d606a252d904eb8b4.json",
+					"jsonFile" : "target-__idf_main-Debug-ae2a6c10a91cb892986c.json",
 					"name" : "__idf_main",
 					"projectIndex" : 1
 				},
@@ -1929,7 +1929,7 @@
 				{
 					"directoryIndex" : 67,
 					"id" : "__idf_mdns::@2f076c6da9dadb273cdc",
-					"jsonFile" : "target-__idf_mdns-Debug-68a26efa197aad0b6940.json",
+					"jsonFile" : "target-__idf_mdns-Debug-c20b6707c5f46cca31f2.json",
 					"name" : "__idf_mdns",
 					"projectIndex" : 1
 				},
@@ -1985,7 +1985,7 @@
 				{
 					"directoryIndex" : 66,
 					"id" : "__idf_protocomm::@d76d01c8dec06205e1fc",
-					"jsonFile" : "target-__idf_protocomm-Debug-bf068e9b565b7f80bad4.json",
+					"jsonFile" : "target-__idf_protocomm-Debug-5d9cf83f117d0d90bca9.json",
 					"name" : "__idf_protocomm",
 					"projectIndex" : 1
 				},
@@ -2069,7 +2069,7 @@
 				{
 					"directoryIndex" : 86,
 					"id" : "__idf_wifi_provisioning::@9d7e7ffe1b15746c1098",
-					"jsonFile" : "target-__idf_wifi_provisioning-Debug-4759724dfc13e97f5d90.json",
+					"jsonFile" : "target-__idf_wifi_provisioning-Debug-6ebdea3c3e8915e20da3.json",
 					"name" : "__idf_wifi_provisioning",
 					"projectIndex" : 1
 				},
@@ -2090,7 +2090,7 @@
 				{
 					"directoryIndex" : 40,
 					"id" : "__ldgen_output_esp32.project.ld::@c361781f7cb51efad0ea",
-					"jsonFile" : "target-__ldgen_output_esp32.project.ld-Debug-c06d5af5944e2ef7a161.json",
+					"jsonFile" : "target-__ldgen_output_esp32.project.ld-Debug-3178ca58c8003f872e9b.json",
 					"name" : "__ldgen_output_esp32.project.ld",
 					"projectIndex" : 1
 				},
@@ -2104,7 +2104,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "a2dp_sink.elf::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-a2dp_sink.elf-Debug-96e1af1b6dce5701b592.json",
+					"jsonFile" : "target-a2dp_sink.elf-Debug-9a14620c44b010a1ccb9.json",
 					"name" : "a2dp_sink.elf",
 					"projectIndex" : 0
 				},
@@ -2216,7 +2216,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "flash::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-flash-Debug-e0b1940f2e6900bff0f8.json",
+					"jsonFile" : "target-flash-Debug-603d265d738631a0a912.json",
 					"name" : "flash",
 					"projectIndex" : 0
 				},
@@ -2321,7 +2321,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "uf2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-uf2-Debug-c99ee365db0e39ba8241.json",
+					"jsonFile" : "target-uf2-Debug-246c96ab42868b1acc1a.json",
 					"name" : "uf2",
 					"projectIndex" : 0
 				},

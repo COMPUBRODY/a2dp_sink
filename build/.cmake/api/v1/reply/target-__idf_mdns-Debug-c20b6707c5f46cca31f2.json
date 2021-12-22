@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "esp-idf/esp_hid/libesp_hid.a"
+			"path" : "esp-idf/mdns/libmdns.a"
 		}
 	],
 	"backtrace" : 2,
@@ -25,7 +25,7 @@
 		"files" : 
 		[
 			"C:/Users/Madera/esp/esp-idf/tools/cmake/component.cmake",
-			"C:/Users/Madera/esp/esp-idf/components/esp_hid/CMakeLists.txt",
+			"C:/Users/Madera/esp/esp-idf/components/mdns/CMakeLists.txt",
 			"C:/Users/Madera/esp/esp-idf/tools/cmake/utilities.cmake"
 		],
 		"nodes" : 
@@ -36,7 +36,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 17,
+				"line" : 1,
 				"parent" : 0
 			},
 			{
@@ -204,13 +204,6 @@
 					"fragment" : "-DESP_PLATFORM"
 				}
 			],
-			"defines" : 
-			[
-				{
-					"backtrace" : 5,
-					"define" : "MBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\""
-				}
-			],
 			"includes" : 
 			[
 				{
@@ -219,11 +212,11 @@
 				},
 				{
 					"backtrace" : 12,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/esp_hid/include"
+					"path" : "C:/Users/Madera/esp/esp-idf/components/mdns/include"
 				},
 				{
 					"backtrace" : 14,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/esp_hid/private"
+					"path" : "C:/Users/Madera/esp/esp-idf/components/mdns/private_include"
 				},
 				{
 					"backtrace" : 2,
@@ -395,47 +388,7 @@
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/bt/common/osi/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/bt/include/esp32/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/bt/common/api/include/api"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/bt/common/btc/profile/esp/blufi/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/bt/common/btc/profile/esp/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/bt/host/bluedroid/api/include/api"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/nvs_flash/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/spi_flash/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/mbedtls/port/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/mbedtls/mbedtls/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Users/Madera/esp/esp-idf/components/mbedtls/esp_crt_bundle/include"
+					"path" : "C:/Users/Madera/esp/esp-idf/components/console"
 				}
 			],
 			"language" : "C",
@@ -443,31 +396,28 @@
 			[
 				0,
 				1,
-				2,
-				3,
-				4,
-				5
+				2
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 5,
-			"id" : "__idf_bt::@0a9ab9982b985d43ed2a"
-		},
-		{
 			"backtrace" : 2,
 			"id" : "__idf_esp_pm::@c93acdd4f72df5fa58db"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "__idf_console::@4311ed8d271cc0ee1422"
 		}
 	],
-	"id" : "__idf_esp_hid::@15df40e16a5d8775dd9b",
-	"name" : "__idf_esp_hid",
-	"nameOnDisk" : "libesp_hid.a",
+	"id" : "__idf_mdns::@2f076c6da9dadb273cdc",
+	"name" : "__idf_mdns",
+	"nameOnDisk" : "libmdns.a",
 	"paths" : 
 	{
-		"build" : "esp-idf/esp_hid",
-		"source" : "C:/Users/Madera/esp/esp-idf/components/esp_hid"
+		"build" : "esp-idf/mdns",
+		"source" : "C:/Users/Madera/esp/esp-idf/components/mdns"
 	},
 	"sourceGroups" : 
 	[
@@ -477,10 +427,7 @@
 			[
 				0,
 				1,
-				2,
-				3,
-				4,
-				5
+				2
 			]
 		}
 	],
@@ -489,37 +436,19 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "C:/Users/Madera/esp/esp-idf/components/esp_hid/src/esp_hidd.c",
+			"path" : "C:/Users/Madera/esp/esp-idf/components/mdns/mdns.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "C:/Users/Madera/esp/esp-idf/components/esp_hid/src/esp_hidh.c",
+			"path" : "C:/Users/Madera/esp/esp-idf/components/mdns/mdns_console.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "C:/Users/Madera/esp/esp-idf/components/esp_hid/src/esp_hid_common.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 2,
-			"compileGroupIndex" : 0,
-			"path" : "C:/Users/Madera/esp/esp-idf/components/esp_hid/src/ble_hidd.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 2,
-			"compileGroupIndex" : 0,
-			"path" : "C:/Users/Madera/esp/esp-idf/components/esp_hid/src/ble_hidh.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 2,
-			"compileGroupIndex" : 0,
-			"path" : "C:/Users/Madera/esp/esp-idf/components/esp_hid/src/bt_hidh.c",
+			"path" : "C:/Users/Madera/esp/esp-idf/components/mdns/mdns_networking.c",
 			"sourceGroupIndex" : 0
 		}
 	],
